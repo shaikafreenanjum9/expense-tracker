@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise - Expense Tracker</title>
+
+    <!-- CSS connection -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo">✦ Spend<span>Wise</span></div>
+        <div class="date-label" id="today"></div>
+    </header>
+
+    <section class="welcome">
+        <h1>Welcome to your Dashboard 👋</h1>
+        <p>Track your spending. Manage your money. Stay in control.</p>
+    </section>
+
+    <!-- Dashboard Cards -->
+    <section class="cards">
+
+        <div class="summary-card">
+            <div class="card-icon">💰</div>
+            <p>Total Expenses</p>
+            <h2 class="purple" id="total">₹0.00</h2>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-icon">📊</div>
+            <p>This Month</p>
+            <h2 class="green" id="monthly">₹0.00</h2>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-icon">🧾</div>
+            <p>Transactions</p>
+            <h2 class="orange" id="count">0</h2>
+        </div>
+
+    </section>
+
+    <div class="main-grid">
+
+        <!-- Add Expense Form -->
+        <section class="panel">
+            <h2>➕ Add New Expense</h2>
+
+            <form id="expenseForm">
+
+                <label>Expense Name</label>
+                <input type="text" id="name"
+                    placeholder="Example: Shopping"
+                    required maxlength="60">
+
+                <label>Amount (₹)</label>
+                <input type="number" id="amount"
+                    placeholder="Enter amount"
+                    min="0.01" step="0.01" required>
+
+                <label>Category</label>
+                <select id="category" required>
+                    <option value="">Choose Category</option>
+                    <option value="Food">🍔 Food</option>
+                    <option value="Travel">🚗 Travel</option>
+                    <option value="Shopping">🛍️ Shopping</option>
+                    <option value="Education">📚 Education</option>
+                    <option value="Bills">💡 Bills</option>
+                    <option value="Entertainment">🎬 Entertainment</option>
+                    <option value="Health">❤️ Health</option>
+                    <option value="Other">📌 Other</option>
+                </select>
+
+                <label>Date</label>
+                <input type="date" id="date" required>
+
+                <button type="submit" class="add-btn">
+                    + Add Expense
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Spending Overview -->
+        <section class="panel">
+            <h2>📈 Spending Overview</h2>
+            <div id="categoryBreakdown" class="empty">
+                Add expenses to see your spending breakdown.
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Transaction History -->
+    <section class="history-panel">
+
+        <div class="history-top">
+            <h2>📋 Recent Transactions</h2>
+
+            <div class="filters">
+                <input type="search" id="search"
+                    placeholder="Search expenses...">
+
+                <select id="filter">
+                    <option value="All">All Categories</option>
+                    <option>Food</option>
+                    <option>Travel</option>
+                    <option>Shopping</option>
+                    <option>Education</option>
+                    <option>Bills</option>
+                    <option>Entertainment</option>
+                    <option>Health</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="expenseList" class="empty">
+            No transactions yet. Add your first expense!
+        </div>
+
+    </section>
+
+    <footer>
+        <p>✦ SpendWise | Personal Finance Management</p>
+        <p>Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+</div>
+
+<!-- JavaScript connection -->
+<script src="script.js"></script>
+
+</body>
+</html>
